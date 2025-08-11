@@ -1,0 +1,81 @@
+body {
+    
+}
+
+.resume {
+    margin: 2% 100vmin 0 0;
+    width: 100%;
+}
+
+.resumeTop {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 37.5px;
+}
+
+.contactImg {
+    max-width: 50px;
+    min-height: 50px;
+    min-width: 50px;
+    max-height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*Makes the text line up with the images rather than below*/
+.contactImg, .contactText {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.name, .title{
+    text-align: left;
+}
+
+.nameAndTitle{
+
+}
+
+.contactList {
+    list-style-type: none;
+    text-align: left;
+}
+
+.contact {
+
+}
+
+.sectionTitle {
+    background-color: #331e0d;
+    margin-bottom: 25px;
+
+}
+
+@media (prefers-color-scheme: light) {
+    .sectionTitle {
+        background-color: #fce5cd;
+    }
+}
+
+.resumeText {
+    
+}
+
+.resumeList {
+    text-align: left;
+    /*center-aligned text results in the bullet points looking off. This is a decent simulation of center align w/out that issue*/
+    margin: 0 25% 0 25%;
+
+}
+
+.resumeNestedList {
+    text-align: left;
+    /*decreases huge indenation difference in nested list*/
+    margin: 0 0 0 10%;
+}
+
+.subSectionTitle {
+    
+}

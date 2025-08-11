@@ -1,0 +1,27 @@
+body {
+}
+
+.about {
+    margin: 2% 100vmin 0 0;
+    width: 100%;
+}
+
+.aboutTitle {
+    margin-top: 25px;
+}
+
+.aboutSection {
+    display: inline-flex;
+    align-items: center;
+}
+
+.aboutImg {
+    max-height: 30vmin;
+    max-width: 40vmin;
+    margin-right: 2vmin;
+    margin-left: 2vmin;
+}
+
+.aboutText {
+    font-size: 110%;
+}
