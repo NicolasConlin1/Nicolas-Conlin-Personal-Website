@@ -23,6 +23,7 @@ const GamecubeInterface = () => {
             console.log("canvas found");
 
             const scaleOffset = 7;
+            let loadCheck = 0;
 
             let pressedButton;
             let lButtonX;
@@ -77,7 +78,8 @@ const GamecubeInterface = () => {
             baseController.onload = () => {
                 controllerCanvas.width = baseController.width;
                 controllerCanvas.height = baseController.height;
-                ctx.drawImage(baseController, 0, 0);
+                console.log('Base Controller Loaded')
+                loadCheck += 1;
             };
 
             const lButton = new Image();
@@ -87,7 +89,8 @@ const GamecubeInterface = () => {
                 console.log(error);
             }
             lButton.onload = () => {
-                ctx.drawImage(lButton, lButtonX, lButtonY);
+                console.log('L Button Loaded')
+                loadCheck += 1;
             }
 
             const rButton = new Image();
@@ -97,7 +100,8 @@ const GamecubeInterface = () => {
                 console.log(error);
             }
             rButton.onload = () => {
-                ctx.drawImage(rButton, rButtonX, rButtonY);
+                console.log('R Button Loaded')
+                loadCheck += 1;
             }
 
             const aButton = new Image();
@@ -107,7 +111,8 @@ const GamecubeInterface = () => {
                 console.log(error);
             }
             aButton.onload = () => {
-                ctx.drawImage(aButton, aButtonX, aButtonY);
+                console.log('A Button Loaded')
+                loadCheck += 1
             }
 
             const bButton = new Image();
@@ -117,7 +122,8 @@ const GamecubeInterface = () => {
                 console.log(error);
             }
             bButton.onload = () => {
-                ctx.drawImage(bButton, bButtonX, bButtonY);
+                console.log('B Button Loaded')
+                loadCheck += 1
             }
 
             const xButton = new Image();
@@ -127,7 +133,8 @@ const GamecubeInterface = () => {
                 console.log(error);
             }
             xButton.onload = () => {
-                ctx.drawImage(xButton, xButtonX, xButtonY);
+                console.log('X Button Loaded')
+                loadCheck += 1
             }
 
             const yButton = new Image();
@@ -137,7 +144,8 @@ const GamecubeInterface = () => {
                 console.log(error);
             }
             yButton.onload = () => {
-                ctx.drawImage(yButton, yButtonX, yButtonY);
+                console.log('Y Button Loaded')
+                loadCheck += 1
             }
 
             const animate = () => {
@@ -168,9 +176,14 @@ const GamecubeInterface = () => {
                     ctx.fillText('nicoconlin@gmail.com', yButtonX - 50, yButtonY + 22)
                 }
             }
-            setTimeout(() => {
+            if (loadCheck == 7) {
                 requestAnimationFrame(animate);
-            },100)
+            }
+            else {
+                setTimeout(() => {
+                    requestAnimationFrame(animate);
+                }, 750)
+            }
 
             controllerCanvas.addEventListener('mousedown', function (event) {
                 const mouseX = event.clientX - controllerCanvas.getBoundingClientRect().left;
