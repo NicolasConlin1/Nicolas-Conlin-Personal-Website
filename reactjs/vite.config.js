@@ -9,6 +9,7 @@ export default defineConfig({
     //    port: 55095,
     //    //Allows ngrok for testing.
     //    //ngrok http http://localhost:55095
+    //    //npm run deploy after push to main
     //    //allowedHosts: true,
     //    allowedHosts: false,
     //}
