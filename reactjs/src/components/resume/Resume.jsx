@@ -172,6 +172,9 @@ const Resume = () => {
                             Python
                         </li>
                         <li>
+                            Go
+                        </li>
+                        <li>
                             Java & JS
                         </li>
                         <li>

@@ -9,6 +9,9 @@ import pygameBoard from '../../assets/PygameBoard.png'
 import gamejamOverview from '../../assets/UnityGameJamOverview.png'
 import gamejamJump from '../../assets/UnityGameJamLightJump.png'
 import gamejamCombat from '../../assets/UnityGameJamCombat.png'
+import goWeatherDefault from '../../assets/GoWeatherAPIGUI-1.png'
+import goWeatherLoading from '../../assets/GoWeatherAPIGUI-2.png'
+import goWeatherDone from '../../assets/GoWeatherAPIGUI-3.png'
 
 const Projects = () => {
     return (
@@ -49,6 +52,11 @@ const Projects = () => {
                         <li className='glossaryItem' onClick={() => document.getElementById('gamejam').scrollIntoView({ block: 'start', behavior: 'smooth' })}>
                             <div className='hoverTransform'>
                                 Small Gamejam Unity Title
+                            </div>
+                        </li>
+                        <li className='glossaryItem' onClick={() => document.getElementById('goweather').scrollIntoView({ block: 'start', behavior: 'smooth' })}>
+                            <div className='hoverTransform'>
+                                Golang Weather App
                             </div>
                         </li>
                     </ul>
@@ -153,6 +161,43 @@ const Projects = () => {
                 <p className='projectText'>
                     Combat was simplistic with enemy AI being one of the last elements implimented, but consideration of spacing with the light was still a factor.
                 </p>
+            </div>
+            <hr></hr>
+            <h2 id='goweather'>
+                Golang Weather App
+            </h2>
+            <div className='projectSection'>
+                <p className='projectText'>
+                    As part of self-teaching myself Golang I created a simple weather app in order to utlize API calls and create a GUI only using Go.
+                    <br></br>
+                    The code can be found on <div className='hoverTransform'> <a target="_blank" rel="noopener noreferrer" href='https://github.com/NicolasConlin1/Go_Weather_App'>github</a></div>.
+                </p>
+                <Zoom>
+                    <img className='projectImg' src={goWeatherDefault} alt='Default State of Go Weather App GUI' title='Default State of Go Weather App GUI'></img>
+                </Zoom>
+            </div>
+            <div className='projectSection'>
+                <Zoom>
+                    <img className='projectImg' src={goWeatherDone} alt='Finished State of Go Weather App' title='Finished State of Go Weather App'></img>
+                </Zoom>
+                <p className='projectText'>
+                    The GUI was created using the open source library Fyne which was also made entirely in Go.
+                    <br></br>
+                    The library allowed for window creation, loading bars, and updates based on user input.
+                </p>
+            </div>
+            <div className='projectSection'>
+                <p className='projectText'>
+                    Weather.gov was used for free API calls with the intent of getting a forecast of a given U.S. state.
+                    <br></br>
+                    Due to their odd setup an open source JSON file of the general lat & long of each state for an initial call, which gave the information needed for another call to get the forecast.
+                    <br></br>
+                    Since multiple API calls can take a variable amount of time, multithreading was used to display a loading bar & keep the GUI active while conducting the API call.
+
+                </p>
+                <Zoom>
+                    <img className='projectImg' src={goWeatherLoading} alt='Loading State of Go Weather App' title='Loading State of Go Weather App' ></img>
+                </Zoom>
             </div>
         </div>
     )
